@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================
+   FIX: Scrollbar layout shift
+   Áp dụng `scrollbar-gutter: stable` cho mọi vùng có thể scroll
+   để chừa sẵn chỗ cho scrollbar — không gây nhảy layout.
+   ========================================================== */
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
+/* Áp dụng cho mọi element scrollable trong app */
+*[class*="overflow-y-auto"],
+*[class*="overflow-auto"] {
+  scrollbar-gutter: stable;
+}
+
+/* Tùy chọn: scrollbar mảnh hơn cho dark theme */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
